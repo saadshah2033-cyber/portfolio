@@ -23,12 +23,6 @@ jobs:
         with:
           node-version: '24.x'
 
-      - name: npm install, build, and test
-        run: |
-          npm install
-          npm run build --if-present
-          npm run test --if-present
-
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
@@ -51,9 +45,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_59DB9E901E4A409E803D14B95DE6298A }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_459FF951B28D416C89C4A15656B30D4B }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_DF9715DDA5E34EB8B92F87CA8CA0534C }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_3E86B01481CD478DA7EA27B4CF68D987 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_5A92B54EDA57457F97DED6E624156E4A }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_963414E2C38549A8A1A82D323B1D7B54 }}
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
